@@ -11,7 +11,7 @@ class Coin extends Entity {
         this.physicsComponent = this.getComponent(ComponentID.COMPONENT_PHYSICS);
         this.meshComponent = this.getComponent(ComponentID.COMPONENT_MESH);
 
-        this.physicsComponent.collisionType = CollisionType.COLLISION_TRIGGER;
+        this.physicsComponent.collisionType = CollisionType.COLLISION_SOLID;
         this.bounceAngle = 0;
 
         this.bounceSpeed = Math.randomRange(25, 75);

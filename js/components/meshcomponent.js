@@ -14,6 +14,11 @@ class MeshComponent extends EntityComponent {
             false,
             this.owner.components[ComponentID.COMPONENT_TRANSFORM].worldTransform
         );
+        gl.uniformMatrix4fv(
+            program.uniformLocation("u_normalTransform"),
+            false,
+            this.owner.components[ComponentID.COMPONENT_TRANSFORM].getNormalTransform()
+        );
         gl.uniform1i(
             program.uniformLocation("u_ignoreLighting"),
             0

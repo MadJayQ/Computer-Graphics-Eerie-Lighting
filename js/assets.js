@@ -8,6 +8,7 @@ class _Assets_ {
             gl,
             mesh.indices(),
             mesh.vertices(),
+            (mesh.normals) ? mesh.normals() : undefined,
             mesh.color()
         );
     }

@@ -58,6 +58,12 @@ class TransformComponent extends EntityComponent {
         return res;
     }
 
+    getNormalTransform() {
+        var res = mat4.create();
+        mat4.transpose(res, this.getInvWorldTransform());
+        return res;
+    }
+
     computeWorldTransform(worldMatrix) {
         if(worldMatrix !== undefined) {
             mat4.multiply(this.worldTransform, worldMatrix, this.localTransform);

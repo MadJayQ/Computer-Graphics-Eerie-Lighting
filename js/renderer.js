@@ -41,7 +41,7 @@ class Renderer {
 
     render(gameworld) {
         this.ctx.viewport(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-        this.clear(SKY);
+        this.clear(DARK);
         this.program.activate();
         
         var cameraID = gameworld.scene.mainCameraID;
@@ -55,6 +55,12 @@ class Renderer {
             this.program.uniformLocation("u_viewMatrix"),
             false,
             gameworld.scene.cameras[cameraID].sceneNode.worldMatrix
+        );
+
+        this.ctx.uniformMatrix4fv(
+            this.program.uniformLocation("u_viewWorldPos"),
+            false,
+            gameworld.scene.cameras[cameraID].transformComponent.getWorldTranslation()
         );
 
         this.recursiveRender(gameworld);
