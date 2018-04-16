@@ -57,10 +57,13 @@ class Renderer {
             gameworld.scene.cameras[cameraID].sceneNode.worldMatrix
         );
 
-        this.ctx.uniformMatrix4fv(
+        var camPos = gameworld.scene.cameras[cameraID].transformComponent.getWorldTranslation();
+        console.log(camPos);
+        this.ctx.uniform3f(
             this.program.uniformLocation("u_viewWorldPos"),
-            false,
-            gameworld.scene.cameras[cameraID].transformComponent.getWorldTranslation()
+            camPos[Math.X],
+            camPos[Math.Y],
+            camPos[Math.Z]
         );
 
         this.recursiveRender(gameworld);

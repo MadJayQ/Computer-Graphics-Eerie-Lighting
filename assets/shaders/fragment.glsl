@@ -1,10 +1,6 @@
 precision mediump float;
-varying vec4 v_color;
-varying vec3 v_normal;
-
-uniform bool u_ignoreLighting;
-
+varying vec3 v_lighting;
 void main()
 {   
-    gl_FragColor = v_color;
+    gl_FragColor = vec4(v_lighting, 1.0);
 }
