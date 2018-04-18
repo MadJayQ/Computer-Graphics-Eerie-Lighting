@@ -58,7 +58,6 @@ class Renderer {
         );
 
         var camPos = gameworld.scene.cameras[cameraID].transformComponent.getWorldTranslation();
-        console.log(camPos);
         this.ctx.uniform3f(
             this.program.uniformLocation("u_viewWorldPos"),
             camPos[Math.X],

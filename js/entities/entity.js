@@ -6,7 +6,11 @@ var EntityType = {
     ENTITY_PLAYER: {id: 3},
     ENTITY_ROCK: {id: 4},
     ENTITY_TREE: {id: 5},
-    ENTITY_COIN: {id: 6}
+    ENTITY_COIN: {id: 6},
+    ENTITY_WALL: {id: 7},
+    ENTITY_SPOTLIGHT: {id: 8},
+    ENTITY_FINISH: {id: 9},
+    ENTITY_START: {id: 10}
 }
 
 var newID = 0;

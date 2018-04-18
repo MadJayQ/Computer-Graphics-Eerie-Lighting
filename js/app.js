@@ -67,6 +67,7 @@ class App {
     assets.addModel(this.gl, TreeMesh(), "tree");
     assets.addModel(this.gl, RockMesh(), "rock");
     assets.addModel(this.gl, CoinMesh(), "coin");
+    assets.addModel(this.gl, TestMesh(), "test");
     assets.addModel(this.gl, GroundMesh(2000, 450), "ground");
     
     // Create game world entity.
@@ -102,7 +103,34 @@ class App {
     coin.physicsComponent.aabb.origin = vec3.fromValues(0, 0, 0);
     coin.physicsComponent.aabb.translation = vec3.fromValues(0, 0, 0);
     coin.physicsComponent.angularVelocity[Math.YAW] = Math.randInt(30, 75);
-    
+
+    var wall = spawnEnt(-200, 0, EntityType.ENTITY_WALL, "test", 1, 10, 200);
+    wall.transformComponent.absOrigin[Math.Y] = 10;
+    wall.physicsComponent.aabb = new AABB(wall, 5, 5, 5);
+    wall.physicsComponent.aabb.origin = vec3.fromValues(0, 0, 0);
+    wall.physicsComponent.aabb.translation = vec3.fromValues(0, 0, 0);
+
+    wall = spawnEnt(200, 0, EntityType.ENTITY_WALL, "test", 1, 10, 200);
+    wall.transformComponent.absOrigin[Math.Y] = 10;
+    wall.physicsComponent.aabb = new AABB(wall, 5, 5, 5);
+    wall.physicsComponent.aabb.origin = vec3.fromValues(0, 0, 0);
+    wall.physicsComponent.aabb.translation = vec3.fromValues(0, 0, 0);
+
+
+    wall = spawnEnt(0, 200, EntityType.ENTITY_WALL, "test", 1, 10, 200);
+    wall.transformComponent.absOrigin[Math.Y] = 10;
+    wall.transformComponent.absRotation[Math.YAW] = 90;
+    wall.physicsComponent.aabb = new AABB(wall, 5, 5, 5);
+    wall.physicsComponent.aabb.origin = vec3.fromValues(0, 0, 0);
+    wall.physicsComponent.aabb.translation = vec3.fromValues(0, 0, 0);
+
+
+    wall = spawnEnt(0, -200, EntityType.ENTITY_WALL, "test", 1, 10, 200);
+    wall.transformComponent.absOrigin[Math.Y] = 10;
+    wall.transformComponent.absRotation[Math.YAW] = 90;
+    wall.physicsComponent.aabb = new AABB(wall, 5, 5, 5);
+    wall.physicsComponent.aabb.origin = vec3.fromValues(0, 0, 0);
+    wall.physicsComponent.aabb.translation = vec3.fromValues(0, 0, 0);
     
     
     
